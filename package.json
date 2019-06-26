@@ -1,0 +1,22 @@
+{
+  "name": "ensono-rec-app",
+  "version": "1.0.0",
+  "description": "An application created for the recruitment process",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lmar13/ensono-rec-app.git"
+  },
+  "author": "Lukasz Marciniak",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lmar13/ensono-rec-app/issues"
+  },
+  "homepage": "https://github.com/lmar13/ensono-rec-app#readme",
+  "dependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
