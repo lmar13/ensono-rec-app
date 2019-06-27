@@ -69,11 +69,9 @@ polka()
     send(res, 200, twoLetters(letters));
   })
   .get('/*', (req, res) => {
-    send(res, 200, fs.readFileSync(path.join(__dirname, 'build', 'index.html')), {'Content-Type': 'text/html'});
-
-
-  //   // res.sendFile(path.join(__dirname, 'build', 'index.html'));
-  //   // serveStatic(path.join(__dirname, 'build', 'index.html'))
+    fs.readFile(path.join(__dirname, 'build', 'index.html'), (err, file) =>{
+      send(res, 200, file, {'Content-Type': 'text/html'});
+    })
   })
   .listen(process.env.PORT || 3001, err => {
     if (err) throw err;
