@@ -16,7 +16,8 @@
     "serve-static": "^1.14.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node app.js",
+    "start:dev": "react-scripts start",
     "start:prod": "node app.js",
     "serve:dev": "nodemon app.js",
     "build": "react-scripts build",
