@@ -8,7 +8,8 @@ class DataService {
         }
     
     
-        return fetch(`http://localhost:3001${url}`, {
+        // return fetch(`http://localhost:3001${url}`, {
+        return fetch(`https://ensono-rec-app.herokuapp.com${url}`, {
           headers,
           ...options,
         })
