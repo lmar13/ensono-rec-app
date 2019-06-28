@@ -40,7 +40,9 @@ rl.on('close', () => {
 });
 
 const twoLetters = letters => {
-  const arr = wordListArray.filter(val => val[0].startsWith(letters.toLowerCase()));
+  const arr = wordListArray.filter(val =>
+    val[0].startsWith(letters.toLowerCase())
+  );
   return arr.slice(arr.length - 10, arr.length);
 };
 
@@ -69,9 +71,9 @@ polka()
     send(res, 200, twoLetters(letters));
   })
   .get('/*', (req, res) => {
-    fs.readFile(path.join(__dirname, 'build', 'index.html'), (err, file) =>{
-      send(res, 200, file, {'Content-Type': 'text/html'});
-    })
+    fs.readFile(path.join(__dirname, 'build', 'index.html'), (err, file) => {
+      send(res, 200, file, { 'Content-Type': 'text/html' });
+    });
   })
   .listen(process.env.PORT || 3001, err => {
     if (err) throw err;
