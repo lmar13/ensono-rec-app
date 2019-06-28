@@ -40,7 +40,7 @@ rl.on('close', () => {
 });
 
 const twoLetters = letters => {
-  const arr = wordListArray.filter(val => val[0].startsWith(letters));
+  const arr = wordListArray.filter(val => val[0].startsWith(letters.toLowerCase()));
   return arr.slice(arr.length - 10, arr.length);
 };
 
