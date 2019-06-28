@@ -8,6 +8,8 @@ const cors = require('cors');
 
 const serveStatic = require('serve-static');
 
+const hrstart = process.hrtime();
+
 const instream = fs.createReadStream('./data/test.txt');
 // const instream = fs.createReadStream('./data/a_christmas_carol.txt');
 // const instream = fs.createReadStream('./data/Charles-Dickens-A-Christmas-Carol.txt');
@@ -33,10 +35,12 @@ rl.on('line', line => {
 rl.on('close', () => {
   wordListArray = Object.entries(wordList);
   wordListArray.sort((a, b) => a[1] - b[1]);
+  const hrend = process.hrtime(hrstart)
 
   console.log('Object size', Object.keys(wordList).length);
   console.log('lineCount', lineCount);
   console.log('File size (MB)', stats.size * Math.pow(10, -6));
+  console.log('Execution time (hr): %ds %dms', hrend[0], hrend[1] / 1000000);
 });
 
 const twoLetters = letters => {
