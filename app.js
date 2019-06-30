@@ -10,9 +10,10 @@ const serveStatic = require('serve-static');
 
 const hrstart = process.hrtime();
 
-const instream = fs.createReadStream('./data/test.txt');
+// const instream = fs.createReadStream('./data/test.txt');
 // const instream = fs.createReadStream('./data/a_christmas_carol.txt');
 // const instream = fs.createReadStream('./data/Charles-Dickens-A-Christmas-Carol.txt');
+const instream = fs.createReadStream('./data/LOTR-full.txt');
 const outstream = new stream();
 const stats = fs.statSync('./data/test.txt');
 
