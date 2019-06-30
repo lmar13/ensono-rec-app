@@ -1,74 +1,30 @@
-# ensono-rec-app
-An application created for the recruitment process
+# Ensono Recruitment App
 
+Project was to develop small application according to provided instructions. It should process text file (A Christmas Carol, Charles Dickens) and provide list of 10 words that occur most often acording to user input and type. 
 
+As it was mentioned in requirements I used Node.js to build tools to process file + server to send http requests.
 
+Application also provide front side build in React where user can make inputs and see list of words that server returns.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was generated using node 10.13.0 and npm 6.4.1 and was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## First step
+To run application in production on your local machine, firstly download or clone the repo, then You need to install all dependencies. Please go to Command Line or Terminal and go to folder with application. In root directory of application please run `npm install`. It will install all necessary dependencies and build project to provide dist folder. After successfull installation You can proceed with starting server. 
 
-In the project directory, you can run:
+## Production server
 
-### `npm start`
+Run `npm start` for a production server. Navigate to address that is shown in console window. If you run it on Your local machine it will probably be http://localhost:3001/. 
+I also deployed this app on Heroku so You can use this link https://ensono-rec-app.herokuapp.com/ to see application is working on server. Please have in mind that on Heroku after page is not used for a while it goes to sleep mode. When You will proceed with link it can have some delay to show the page - usually few seconds.
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## App instruction
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+When You open page in browser, you will see main page with white box on middle of page. Inside this box you can see tabs to change type of search. Put into text box 2 letters or number describing length of word you are lokking for and click search. When server respond list of words will show and you can see results. When you want change result click reset or start inputing new value and once again click search
 
-### `npm test`
+## GIT and Heroku repository for this application
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Heroku: https://ensono-rec-app.herokuapp.com/
+GIT: https://github.com/lmar13/ensono-rec-app
 
-### `npm run build`
+### Error
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+Sometimes You can see error in console `Node / Express: EADDRINUSE, Address already in use`. That's mean that the port I provided can be occupied already. To deal with that error go to root folder and find `app.js` file. There go to line 83 and change number `3001` to another one for example `3000`. Save file and proceed to step run `Production server`.
